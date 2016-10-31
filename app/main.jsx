@@ -46,7 +46,7 @@ socket.on('allWarriorsData', (warriors) => {
 });
 
 socket.on('tooManyRequests', () => {
-	store.dispatch(notify('Too many requests!', 'error'));
+	store.dispatch(notify('No cheating! You have been disconnected.', 'error'));
 });
 
 

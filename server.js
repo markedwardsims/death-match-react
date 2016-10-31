@@ -4,7 +4,7 @@ var http = require("http").createServer(app);
 var io = require('socket.io').listen(http);
 var port = 3000;
 var RateLimiter = require('limiter').RateLimiter;
-var limiter = new RateLimiter(1, 250, true); // fire CB immediately
+var limiter = new RateLimiter(1, 50, true); // fire CB immediately
 
 // serve any file out of the current directory
 app.use(express.static(__dirname));
