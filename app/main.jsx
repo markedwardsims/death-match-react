@@ -45,6 +45,11 @@ socket.on('allWarriorsData', (warriors) => {
 	}
 });
 
+socket.on('tooManyRequests', () => {
+	store.dispatch(notify('Too many requests!', 'error'));
+});
+
+
 // ================================================================
 // render
 // ================================================================

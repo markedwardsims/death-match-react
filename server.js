@@ -4,7 +4,7 @@ var http = require("http").createServer(app);
 var io = require('socket.io').listen(http);
 var port = 3000;
 var RateLimiter = require('limiter').RateLimiter;
-var limiter = new RateLimiter(1, 500, true); // fire CB immediately
+var limiter = new RateLimiter(1, 250, true); // fire CB immediately
 
 // serve any file out of the current directory
 app.use(express.static(__dirname));
@@ -26,13 +26,19 @@ var warriors = [
 
 io.on('connection', function(socket) {
     console.log('new client connected');
-    io.sockets.emit('allWarriorsData', warriors);
+    socket.emit('allWarriorsData', warriors);
 
     socket.on('warriorSelection', function(selectedId) {
 
-        // throttle the incoming events to help prevent hacking
+        // limit the incoming events to help prevent hacking
         limiter.removeTokens(1, function(err, remainingRequests) {
-            if (remainingRequests >= 0) {
+            // disconnect malicious users 
+            if (remainingRequests < 0) {
+                socket.emit('tooManyRequests');
+                socket.disconnect('unauthorized');
+            }
+            // otherwise, process the incoming request
+            else {
                 console.log('warriorSelection', selectedId);
                 var newWarriors = warriors.map(function(warrior) {
                     if (warrior.id === selectedId) warrior.wins++;
