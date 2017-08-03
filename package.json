@@ -11,6 +11,7 @@
     "deathmatch-components": "https://github.com/markedwardsims/death-match-components",
     "limiter": "^1.1.0",
     "lodash": "^4.13.1",
+    "prop-types": "^15.5.10",
     "react": "^15.1.0",
     "react-dom": "^15.1.0",
     "react-redux": "^4.4.5",

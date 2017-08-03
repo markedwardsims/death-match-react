@@ -1,21 +1,17 @@
 import React from 'react';
+import PropTypes from 'prop-types'
 import Warrior from 'warrior';
 import {IMAGE_PATH} from 'constants/appConstants';
 
 import 'dmc/css/components/warriorDetail.min.css';
 
-export default React.createClass({
+export default class WarriorDetail extends React.PureComponent {
 
-    displayName: 'WarriorDetail',
-
-    propTypes: {
-        warrior: React.PropTypes.object,
-        onClickHandler: React.PropTypes.func,
-        warriorDetailCssClass: React.PropTypes.string
-    },
+    constructor(props) {
+        super(props);
+    }
 
     render() {
-
         let cssClass = "warrior-detail";
         if (this.props.warriorDetailCssClass) cssClass = cssClass + ' ' + this.props.warriorDetailCssClass;
 
@@ -29,8 +25,15 @@ export default React.createClass({
             </figure> : null;
 
         return warrior;
-
     }
 
-});
+}
+
+WarriorDetail.displayName = 'WarriorDetail';
+
+WarriorDetail.propTypes = {
+    warrior: PropTypes.object,
+    onClickHandler: PropTypes.func,
+    warriorDetailCssClass: PropTypes.string
+};
 
