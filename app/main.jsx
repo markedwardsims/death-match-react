@@ -1,7 +1,7 @@
 import ReactDOM from 'react-dom';
 import React from 'react';
-// import thunkMiddleware from 'redux-thunk';
-import createLogger from 'redux-logger';
+import { composeWithDevTools } from 'redux-devtools-extension';
+import { createLogger } from 'redux-logger';
 import { createStore, applyMiddleware } from 'redux';
 import reducer  from './reducers/index.js';
 import io from 'socket.io-client';
@@ -15,10 +15,11 @@ import Content from 'content';
 const loggerMiddleware = createLogger();
 const store = createStore(
 	reducer,
-	applyMiddleware(
-		// thunkMiddleware,
-    	loggerMiddleware
-  	)
+    composeWithDevTools(
+        applyMiddleware(
+            loggerMiddleware
+        )
+    )
 );
 
 // ================================================================

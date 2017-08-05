@@ -1,33 +1,40 @@
 import React from 'react';
-import { connect } from 'react-redux';
+import {connect} from 'react-redux';
 
 import 'dmc/css/components/notification.css';
 import Notification from 'dmc/js/components/notification.min.js';
+import PropTypes from 'prop-types';
 
-export default React.createClass({
+export class NotificationWrapper extends React.PureComponent {
 
-  displayName: 'NotificationWrapper',
+    constructor(props) {
+        super(props);
+    }
 
-  propTypes: {
-    message: React.PropTypes.string.isRequired,
-    theme: React.PropTypes.string,
-    onAfterClick: React.PropTypes.func.isRequired,
-    autoDismissTimeout: React.PropTypes.number
-  },
+    componentDidMount() {
+        this.myNotification = new Notification(this.refs.notification, {
+            onAfterClick: this.props.onAfterClick,
+            autoDismissTimeout: this.props.autoDismissTimeout,
+            theme: this.props.theme
+        });
+    }
 
-  componentDidMount() {
-    this.myNotification = new Notification(this.refs.notification, {
-      onAfterClick: this.props.onAfterClick,
-      autoDismissTimeout: this.props.autoDismissTimeout,
-      theme: this.props.theme
-    });
-  },
+    render() {
+        return (
+            <div ref="notification" className="notification-list__item">{this.props.message}</div>
+        );
 
-  render() {
-    return (
-      <div ref="notification" className="notification-list__item">{this.props.message}</div>
-    );
+    }
 
-  }
-  
-});
+}
+
+NotificationWrapper.displayName = 'NotificationWrapper';
+
+NotificationWrapper.propTypes = {
+    message: PropTypes.string.isRequired,
+    theme: PropTypes.string,
+    onAfterClick: PropTypes.func.isRequired,
+    autoDismissTimeout: PropTypes.number
+};
+
+export default NotificationWrapper;

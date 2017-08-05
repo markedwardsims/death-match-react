@@ -6,13 +6,7 @@ var webpackConfig = require('../webpack.config.js');
 webpackConfig.plugins.push(new webpack.optimize.UglifyJsPlugin({minimize: true}));
 webpackConfig.plugins.push(new webpack.DefinePlugin({"process.env": {NODE_ENV: JSON.stringify("production")}}));
 
-gulp.task('build', [
-    'clean:dist',
-    'lint:scss',
-    'lint:js',
-    'lint:jsx',
-    'test'
-], function(callback) {
+const buildWithWebpack = function(callback) {
     webpack(webpackConfig, function(err, stats) {
         if (err) throw new gutil.PluginError("build", err);
         gutil.log("[build]", stats.toString({
@@ -20,4 +14,14 @@ gulp.task('build', [
         }));
         callback();
     });
-});
+}
+
+gulp.task('build', [
+    'clean:dist',
+    'lint:scss',
+    'lint:js',
+    'lint:jsx',
+    'test'
+], buildWithWebpack);
+
+gulp.task('build:local', buildWithWebpack);

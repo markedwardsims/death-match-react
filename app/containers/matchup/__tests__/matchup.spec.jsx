@@ -31,16 +31,16 @@ describe('the Matchup component', () => {
 	});
 
 	describe('with opponent1 and opponent2 props', () => {
-		
+
 		it('should render the Matchup! title', () => {
 			const title = mount(<Matchup opponent1={mockOpponent1} opponent2={mockOpponent2} />).find('div h2');
-			expect(title).to.have.length(1);	
+			expect(title).to.have.length(1);
 			expect(title).to.have.text('Matchup!');
 		});
 
 		it('should render the Who wins?? title', () => {
 			const title = mount(<Matchup opponent1={mockOpponent1} opponent2={mockOpponent2} />).find('h3').at(0);
-			expect(title).to.have.length(1);	
+			expect(title).to.have.length(1);
 			expect(title).to.have.text('Who wins??');
 		});
 
@@ -51,7 +51,7 @@ describe('the Matchup component', () => {
 
 		it('should render the vs title', () => {
 			const title = mount(<Matchup opponent1={mockOpponent1} opponent2={mockOpponent2} />).find('h3').at(1);
-			expect(title).to.have.length(1);	
+			expect(title).to.have.length(1);
 			expect(title).to.have.text('vs');
 		});
 

@@ -15,13 +15,13 @@ describe('The Notification List component', () => {
 	describe('with mocked notificationWrapper', () => {
 
 		beforeEach( () => {
+			const MockNotification  = (props) => {
+                return <div className="mock-notification" onClick={props.onAfterClick} />;
+			};
+            MockNotification.displayName = 'MockNotification';
+
 			// mock the Notification component
-			NotificationListAPI.__Rewire__('Notification', React.createClass({
-			  displayName: 'MockNotification',
-			  render() {
-			  	return <div className="mock-notification" onClick={this.props.onAfterClick} />;
-			  }
-			}));
+			NotificationListAPI.__Rewire__('Notification', MockNotification);
 		});
 
 		afterEach( () => {
