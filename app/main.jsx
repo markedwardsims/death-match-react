@@ -1,7 +1,7 @@
 import ReactDOM from 'react-dom';
 import React from 'react';
 // import thunkMiddleware from 'redux-thunk';
-import createLogger from 'redux-logger';
+import { createLogger } from 'redux-logger';
 import { createStore, applyMiddleware } from 'redux';
 import reducer  from './reducers/index.js';
 import io from 'socket.io-client';

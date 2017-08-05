@@ -1,51 +1,56 @@
 import React from 'react';
-import { connect } from 'react-redux';
+import {connect} from 'react-redux';
 import Notification from 'notificationWrapper';
-import { notifyClear } from 'actions';
+import {notifyClear} from 'actions';
+import PropTypes from 'prop-types';
 
-export const NotificationList = React.createClass({
+export const NotificationList = (props) => {
 
-  displayName: 'NotificationList',
+    const getNotificationListItems = () => {
+        let items = [];
+        props.notifications.forEach((notification) => {
+            items.push(
+                <Notification
+                    key={notification.id}
+                    onAfterClick={props.notifyClear.bind(null, notification.id)}
+                    message={notification.message}
+                    theme={notification.theme}
+                    autoDismissTimeout={notification.autoDismissTimeout}
+                />
+            );
+        });
+        return items;
+    };
 
-  propTypes: {
-    notifications: React.PropTypes.array.isRequired,
-    notifyClear: React.PropTypes.func.isRequired
-  },
-
-  getNotificationListItems() {
-      let items = [];
-      this.props.notifications.forEach((notification) => {
-        items.push(
-          <Notification key={notification.id} onAfterClick={this.props.notifyClear.bind(null, notification.id)} message={notification.message} theme={notification.theme} autoDismissTimeout={notification.autoDismissTimeout} />
-        );
-      });
-      return items;
-  },
-
-  render() {
     return (
-      <div className="notification-list">
-          {this.getNotificationListItems()}
-      </div>
+        <div className="notification-list">
+            {getNotificationListItems()}
+        </div>
     );
-  }
-  
-});
+
+};
 
 /* istanbul ignore next */
 const mapStateToProps = (store) => {
-  return { 
-    notifications: store.notifications
-  };
+    return {
+        notifications: store.notifications
+    };
 };
 
 /* istanbul ignore next */
 const mapDispatchToProps = (dispatch) => {
-  return { 
-    notifyClear: (id) => {
-      dispatch(notifyClear(id));
-    }
-  };
+    return {
+        notifyClear: (id) => {
+            dispatch(notifyClear(id));
+        }
+    };
+};
+
+NotificationList.displayName = 'NotificationList';
+
+NotificationList.propTypes = {
+    notifications: PropTypes.array.isRequired,
+    notifyClear: PropTypes.func.isRequired
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(NotificationList);

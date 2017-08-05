@@ -1,47 +1,44 @@
 import React from 'react';
-import { connect } from 'react-redux';
+import {connect} from 'react-redux';
 import Warrior from 'warrior';
-import { IMAGE_PATH } from 'constants/appConstants';
-
+import {IMAGE_PATH} from 'constants/appConstants';
 import 'dmc/css/components/warriorsList.min.css';
+import PropTypes from 'prop-types';
 
-export const WarriorsList = React.createClass({
+export const WarriorsList = (props) => {
 
-  displayName: 'WarriorList',
-
-  propTypes: {
-  	warriors: React.PropTypes.array.isRequired
-  },
-
-  getWarriorsListItems() {
-  	  let items = [];
-  	  this.props.warriors.forEach((warrior, index) => {
-    		items.push(
-    		  <li className="warriors__list-item" key={index}>
-          	<Warrior image={warrior.image} size="small" />
-          </li>
-  		  );
-  	  });
-  	  return items;
-  },
-
-  render() {
+    const getWarriorsListItems = () => {
+        let items = [];
+        props.warriors.forEach((warrior, index) => {
+            items.push(
+                <li className="warriors__list-item" key={index}>
+                    <Warrior image={warrior.image} size="small"/>
+                </li>
+            );
+        });
+        return items;
+    };
 
     return (
-  		<section className="warriors sidebar__section">
-  		    <h3 className="title title--medium">Warriors</h3>
-  		    <ul className="warriors__list clearfix">
-  		        {this.getWarriorsListItems()}
-  		    </ul>
-  		</section>
+        <section className="warriors sidebar__section">
+            <h3 className="title title--medium">Warriors</h3>
+            <ul className="warriors__list clearfix">
+                {getWarriorsListItems()}
+            </ul>
+        </section>
     );
-  }
-  
-});
+
+};
 
 /* istanbul ignore next */
 const mapStateToProps = (store) => {
-  return { warriors: store.warriors.allWarriors };
+    return {warriors: store.warriors.allWarriors};
+};
+
+WarriorsList.displayName = 'WarriorList';
+
+WarriorsList.propTypes = {
+    warriors: PropTypes.array.isRequired
 };
 
 export default connect(mapStateToProps)(WarriorsList);

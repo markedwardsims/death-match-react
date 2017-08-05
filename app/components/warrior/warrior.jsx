@@ -1,25 +1,25 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import classNames from 'classnames';
-import { IMAGE_PATH } from 'constants/appConstants';
+import {IMAGE_PATH} from 'constants/appConstants';
 
 import 'dmc/css/components/warrior.min.css';
 
-export default React.createClass({
+export const Warrior = (props) => {
 
-  displayName: 'Warrior',
-
-  propTypes: {
-  	image: React.PropTypes.string.isRequired,
-  	size: React.PropTypes.string
-  },
-
-  render() {
-
-	  let imageClasses = classNames('warrior', { ['warrior--' + this.props.size]: this.props.size });
+    let imageClasses = classNames('warrior', {['warrior--' + props.size]: props.size});
 
     return (
-    	<img className={imageClasses} src={IMAGE_PATH + this.props.image} />
+        <img className={imageClasses} src={IMAGE_PATH + props.image}/>
     );
-  }
-  
-});
+
+};
+
+Warrior.displayName = 'Warrior';
+
+Warrior.propTypes = {
+    image: PropTypes.string.isRequired,
+    size: PropTypes.string
+};
+
+export default Warrior;
