@@ -23,13 +23,13 @@ jsLoader.query.plugins = loaderPlugins;
 jsxLoader.query.plugins = loaderPlugins;
 
 module.exports = {
+    entry: ['babel-polyfill'],
     resolve: {
-        root: path.resolve(__dirname),
         alias: alias,
         extensions: extensions
     },
     module: {
-        loaders: [
+        rules: [
             jsLoader,
             jsxLoader,
             cssLoader,

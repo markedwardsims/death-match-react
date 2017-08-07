@@ -1,6 +1,6 @@
 import { expect } from 'chai';
 
-import * as actions from 'actions';
+import * as actions from 'Actions';
 
 describe('the actions index.js', () => {
 
@@ -20,7 +20,7 @@ describe('the actions index.js', () => {
         expect(actions.chooseOpponents()).eql(expectedAction);
     });
 
-    it('should create an action to add a notification', () => {
+    it('should create an action to add a notificationList', () => {
         actions.setNotificationId(3);
         const mockMessage = "foo bar baz";
         const mockTheme = "bash";
@@ -35,7 +35,7 @@ describe('the actions index.js', () => {
         expect(actions.notify(mockMessage, mockTheme, mockTimeout)).eql(expectedAction);
     });
 
-    it('should increment the notification id', () => {
+    it('should increment the notificationList id', () => {
         actions.setNotificationId(12);
         const mockMessage = "foo bar baz";
         const mockTheme = "bash";
@@ -46,7 +46,7 @@ describe('the actions index.js', () => {
     });
 
 
-    it('should create an action to clear a notification', () => {
+    it('should create an action to clear a notificationList', () => {
         const expectedAction = {
             type: actions.NOTIFY_CLEAR,
             id: 33

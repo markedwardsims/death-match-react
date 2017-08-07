@@ -8,7 +8,7 @@ chai.use(chaiEnzyme());
 
 const expect = chai.expect;
 
-import { NotificationList, __RewireAPI__ as NotificationListAPI } from '../notificationList';
+import { NotificationList, __RewireAPI__ as NotificationListAPI } from '../index';
 
 describe('The Notification List component', () => {
 

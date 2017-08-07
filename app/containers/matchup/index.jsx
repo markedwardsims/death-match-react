@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {connect} from 'react-redux';
-import WarriorDetail from 'warriorDetail';
-import {chooseOpponents, notify, notifyClear} from 'actions';
+import WarriorDetail from 'Components/warriorDetail';
+import {chooseOpponents, notify, notifyClear} from 'Actions';
 
 import './matchup.scss';
 

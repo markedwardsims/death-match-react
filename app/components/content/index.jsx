@@ -1,9 +1,9 @@
 import React from 'react';
-import Header from 'header';
-import WarriorsList from 'warriorsList';
-import Leaderboard from 'leaderboard';
-import Matchup from 'matchup';
-import NotificationList from 'notificationList';
+import Header from 'Components/header';
+import WarriorsList from 'Containers/warriorsList';
+import Leaderboard from 'Containers/leaderboard';
+import Matchup from 'Containers/matchup';
+import NotificationList from 'Containers/notificationList';
 
 export const Content = (props) => {
 
