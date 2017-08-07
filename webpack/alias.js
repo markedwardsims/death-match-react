@@ -1,27 +1,18 @@
+var path = require('path');
+
 module.exports = {
-    // components
-    header: 'app/components/header/header.jsx',
-    warrior: 'app/components/warrior/warrior.jsx',
-    warriorDetail: 'app/components/warriorDetail/warriorDetail.jsx',
-    content: 'app/components/content/content.jsx',
 
-    // containers
-    leaderboard: 'app/containers/leaderboard/leaderboard.jsx',
-    matchup: 'app/containers/matchup/matchup.jsx',
-    notificationWrapper: 'app/containers/notification/notificationWrapper.jsx',
-    notificationList: 'app/containers/notification/notificationList.jsx',
-    warriorsList: 'app/containers/warriorsList/warriorsList.jsx',
+    // directories
+    App: path.resolve(__dirname, '../', 'app'),
+    Components: path.resolve(__dirname, '../', 'app/components'),
+    Containers: path.resolve(__dirname, '../', 'app/containers'),
 
-    // actions
-    actions: 'app/actions/index.js',
-
-    // constants directory
-    constants: 'app/constants',
-
-    // reducers directory
-    reducers: 'app/reducers',
+    // redux
+    Actions: path.resolve(__dirname, '../', 'app/actions'),
+    Constants: path.resolve(__dirname, '../', 'app/constants'),
+    Reducers: path.resolve(__dirname, '../', 'app/reducers'),
 
     // deathmatch components directory
-    dmc: 'node_modules/deathmatch-components/dist'
+    dmc: path.resolve(__dirname, '../', 'node_modules/deathmatch-components/dist')
 
 };

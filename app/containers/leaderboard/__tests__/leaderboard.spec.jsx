@@ -8,7 +8,7 @@ chai.use(chaiEnzyme());
 
 const expect = chai.expect;
 
-import { Leaderboard } from '../leaderboard';
+import { Leaderboard } from '../index';
 
 describe('the Leaderboard component', () => {
 

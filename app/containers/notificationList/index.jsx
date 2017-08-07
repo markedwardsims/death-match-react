@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import Notification from 'notificationWrapper';
-import {notifyClear} from 'actions';
+import Notification from 'Containers/notificationList/notificationWrapper';
+import {notifyClear} from 'Actions';
 import PropTypes from 'prop-types';
 
 export const NotificationList = (props) => {

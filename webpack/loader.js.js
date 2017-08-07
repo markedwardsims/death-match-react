@@ -6,7 +6,7 @@ module.exports = {
         path.resolve(__dirname, "../", "app"),
         path.resolve(__dirname, "../", "node_modules/deathmatch-components")
     ],
-    loader: 'babel',
+    loader: 'babel-loader',
     query: {
         presets: ['es2015']
     }

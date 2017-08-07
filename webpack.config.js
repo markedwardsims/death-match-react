@@ -11,16 +11,15 @@ var extensions = require('./webpack/extensions.js');
 module.exports = {
     entry: ['babel-polyfill', './app/main.jsx'],
     output: {
-        path: './dist',
+        path: path.resolve(__dirname, 'dist'),
         filename: 'deathmatchApp.js'
     },
     resolve: {
-        root: path.resolve(__dirname),
         alias: alias,
         extensions: extensions
     },
     module: {
-        loaders: [
+        rules: [
             jsLoader,
             jsxLoader,
             cssLoader,

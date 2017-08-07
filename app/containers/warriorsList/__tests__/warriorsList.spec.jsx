@@ -8,7 +8,7 @@ chai.use(chaiEnzyme());
 
 const expect = chai.expect;
 
-import { WarriorsList } from '../warriorsList';
+import { WarriorsList } from '../index';
 
 describe('the WarriorsList component', () => {
 

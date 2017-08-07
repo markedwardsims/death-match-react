@@ -5,7 +5,7 @@ module.exports = {
     include: [
         path.resolve(__dirname, "../", "app")
     ],
-    loader: 'babel',    
+    loader: 'babel-loader',
     query: {
         presets: ['react', 'es2015']
     }

@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Warrior from 'warrior';
-import {IMAGE_PATH} from 'constants/appConstants';
+import Warrior from 'Components/warrior';
+import {IMAGE_PATH} from 'Constants/appConstants';
 
 import 'dmc/css/components/warriorDetail.min.css';
 

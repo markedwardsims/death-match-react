@@ -8,7 +8,7 @@ chai.use(chaiEnzyme());
 
 const expect = chai.expect;
 
-import { Matchup, __RewireAPI__ as MatchupAPI } from '../matchup';
+import { Matchup, __RewireAPI__ as MatchupAPI } from '../index';
 
 describe('the Matchup component', () => {
 	const mockOpponent1 = { id: 1234, image: 'foo.png' };
