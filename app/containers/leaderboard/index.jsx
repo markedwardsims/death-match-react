@@ -1,8 +1,8 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {orderBy} from 'lodash';
-
-import 'dmc/css/components/leaderboard.min.css';
+import 'dmc/components/leaderboard/leaderboard.css';
+import 'dmc/components/table/table.css';
 import PropTypes from 'prop-types';
 
 export const Leaderboard = (props) => {

@@ -1,5 +1,5 @@
 import React from 'react';
-import 'dmc/css/components/header.min.css';
+import 'dmc/components/header/header.css';
 
 export const Header = (props) => {
 

@@ -2,8 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import {IMAGE_PATH} from 'Constants/appConstants';
-
-import 'dmc/css/components/warrior.min.css';
+import 'dmc/components/warrior/warrior.css';
 
 export const Warrior = (props) => {
 

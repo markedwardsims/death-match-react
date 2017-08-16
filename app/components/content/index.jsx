@@ -4,6 +4,7 @@ import WarriorsList from 'Containers/warriorsList';
 import Leaderboard from 'Containers/leaderboard';
 import Matchup from 'Containers/matchup';
 import NotificationList from 'Containers/notificationList';
+import 'dmc/components/sidebar/sidebar.css';
 
 export const Content = (props) => {
 

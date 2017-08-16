@@ -1,8 +1,8 @@
 import React from 'react';
 import {connect} from 'react-redux';
 
-import 'dmc/css/components/notification.css';
-import Notification from 'dmc/js/components/notification.min.js';
+import 'dmc/components/notification/notification.css';
+import Notification from 'dmc/components/notification/notification.js';
 import PropTypes from 'prop-types';
 
 export class NotificationWrapper extends React.PureComponent {
