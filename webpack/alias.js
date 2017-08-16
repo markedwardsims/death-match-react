@@ -13,6 +13,7 @@ module.exports = {
     Reducers: path.resolve(__dirname, '../', 'app/reducers'),
 
     // deathmatch components directory
-    dmc: path.resolve(__dirname, '../', 'node_modules/deathmatch-components/dist')
+    dmc: path.resolve(__dirname, '../', 'node_modules/deathmatch-components/dist'),
+    iconsLocation: path.resolve(__dirname, '../', 'node_modules/deathmatch-components/dist/components/icons')
 
 };

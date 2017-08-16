@@ -2,7 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 import Warrior from 'Components/warrior';
 import {IMAGE_PATH} from 'Constants/appConstants';
-import 'dmc/css/components/warriorsList.min.css';
+import 'dmc/components/warriorsList/warriorsList.css';
 import PropTypes from 'prop-types';
 
 export const WarriorsList = (props) => {
