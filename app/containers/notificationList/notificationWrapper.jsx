@@ -12,7 +12,8 @@ export class NotificationWrapper extends React.PureComponent {
     }
 
     componentDidMount() {
-        this.myNotification = new Notification(this.refs.notification, {
+        this.myNotification = new Notification({
+            el: this.refs.notification,
             onAfterClick: this.props.onAfterClick,
             autoDismissTimeout: this.props.autoDismissTimeout,
             theme: this.props.theme
