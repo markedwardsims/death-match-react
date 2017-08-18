@@ -4,10 +4,10 @@ import 'dmc/components/header/header.css';
 export const Header = (props) => {
 
     return (
-        <header className="header">
-            <h1 className="header__title">
+        <header className="dm-header">
+            <h1 className="dm-header__title">
                 Death
-                <span className="header__logo"></span>
+                <span className="dm-header__logo"></span>
                 Match
             </h1>
         </header>

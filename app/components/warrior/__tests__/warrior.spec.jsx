@@ -12,9 +12,9 @@ import Warrior from '../index';
 
 describe('The Warrior component', () => {
 
-	it('should render a single .warrior element', () => {
+	it('should render a single .dm-warrior element', () => {
 		const warrior = mount(<Warrior image="foo.png" />);
-		expect(warrior.find('.warrior')).to.have.length(1);
+		expect(warrior.find('.dm-warrior')).to.have.length(1);
 	});
 
 	it('should set the src attribute to the image prop value', () => {
@@ -26,8 +26,8 @@ describe('The Warrior component', () => {
 
 		it('should add a size class if the prop is provided', () => {
 			const warrior = mount(<Warrior image="foo.png" size="bar" />);
-			expect(warrior).to.have.className('warrior');
-			expect(warrior).to.have.className('warrior--bar');
+			expect(warrior).to.have.className('dm-warrior');
+			expect(warrior).to.have.className('dm-warrior--bar');
 		});
 
 	});

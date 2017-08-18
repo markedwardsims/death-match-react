@@ -6,15 +6,15 @@ import 'dmc/components/warriorDetail/warriorDetail.css';
 
 export const WarriorDetail = (props) => {
 
-    let cssClass = "warrior-detail";
+    let cssClass = "dm-warrior-detail";
     if (props.warriorDetailCssClass) cssClass = cssClass + ' ' + props.warriorDetailCssClass;
 
     return (props.warrior) ?
         <figure className={cssClass} onClick={props.onClickHandler}>
             <Warrior image={props.warrior.image}/>
-            <figcaption className="warrior-detail__caption">
-                <div className="warrior-detail__name">{props.warrior.name}</div>
-                <div className="warrior-detail__wins">{props.warrior.wins}</div>
+            <figcaption className="dm-warrior-detail__caption">
+                <div className="dm-warrior-detail__name">{props.warrior.name}</div>
+                <div className="dm-warrior-detail__wins">{props.warrior.wins}</div>
             </figcaption>
         </figure> : null;
 

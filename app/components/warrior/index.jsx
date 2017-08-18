@@ -6,7 +6,7 @@ import 'dmc/components/warrior/warrior.css';
 
 export const Warrior = (props) => {
 
-    let imageClasses = classNames('warrior', {['warrior--' + props.size]: props.size});
+    let imageClasses = classNames('dm-warrior', {['dm-warrior--' + props.size]: props.size});
 
     return (
         <img className={imageClasses} src={IMAGE_PATH + props.image}/>
