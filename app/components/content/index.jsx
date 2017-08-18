@@ -9,18 +9,18 @@ import 'dmc/components/sidebar/sidebar.css';
 export const Content = (props) => {
 
     return (
-        <div className="container-fluid">
-            <div className="row row--no-gutter">
-                <div className="col-xs-12">
+        <div className="dm-container-fluid">
+            <div className="dm-row dm-row--no-gutter">
+                <div className="dm-col-xs-12">
                     <Header />
                     <NotificationList />
                 </div>
             </div>
-            <div className="row row--no-gutter">
-                <div className="main col-xs-12 col-md-9 push-md-3">
+            <div className="dm-row dm-row--no-gutter">
+                <div className="dm-main dm-col-xs-12 dm-col-md-9 dm-push-md-3">
                     <Matchup socket={props.socket}/>
                 </div>
-                <aside className="sidebar col-xs-12 col-md-3 pull-md-9">
+                <aside className="dm-sidebar dm-col-xs-12 dm-col-md-3 dm-pull-md-9">
                     <Leaderboard />
                     <WarriorsList />
                 </aside>

@@ -22,7 +22,7 @@ export class NotificationWrapper extends React.PureComponent {
 
     render() {
         return (
-            <div ref="notification" className="notification-list__item">{this.props.message}</div>
+            <div ref="notification" className="dm-notification-list__item">{this.props.message}</div>
         );
 
     }

@@ -11,7 +11,7 @@ export const WarriorsList = (props) => {
         let items = [];
         props.warriors.forEach((warrior, index) => {
             items.push(
-                <li className="warriors__list-item" key={index}>
+                <li className="dm-warriors__list-item" key={index}>
                     <Warrior image={warrior.image} size="small"/>
                 </li>
             );
@@ -20,9 +20,9 @@ export const WarriorsList = (props) => {
     };
 
     return (
-        <section className="warriors sidebar__section">
-            <h3 className="title title--medium">Warriors</h3>
-            <ul className="warriors__list clearfix">
+        <section className="dm-warriors dm-sidebar__section">
+            <h3 className="dm-title dm-title--medium">Warriors</h3>
+            <ul className="dm-warriors__list dm-clearfix">
                 {getWarriorsListItems()}
             </ul>
         </section>

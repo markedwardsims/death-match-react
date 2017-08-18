@@ -29,24 +29,24 @@ describe('the WarriorDetail component', () => {
 			wins: 99
 		};
 
-		it('should render a single .warrior-detail element', () => {
-			const warriorDetail = mount(<WarriorDetail warrior={mockWarrior} />).find('.warrior-detail');
+		it('should render a single .dm-warrior-detail element', () => {
+			const warriorDetail = mount(<WarriorDetail warrior={mockWarrior} />).find('.dm-warrior-detail');
 			expect(warriorDetail).to.have.length(1);
 		});
 
-		it('should render a single .warrior-detail__caption element', () => {
-			const warriorDetail = mount(<WarriorDetail warrior={mockWarrior} />).find('.warrior-detail__caption');
+		it('should render a single .dm-warrior-detail__caption element', () => {
+			const warriorDetail = mount(<WarriorDetail warrior={mockWarrior} />).find('.dm-warrior-detail__caption');
 			expect(warriorDetail.length).to.eq(1);
 		});
 
-		it('should render a single .warrior-detail__name element', () => {
-			const name = mount(<WarriorDetail warrior={mockWarrior} />).find('.warrior-detail__name');
+		it('should render a single .dm-warrior-detail__name element', () => {
+			const name = mount(<WarriorDetail warrior={mockWarrior} />).find('.dm-warrior-detail__name');
 			expect(name).to.have.length(1);
 			expect(name).to.have.text(mockWarrior.name);
 		});
 
-		it('should render a single .warrior-detail__wins element', () => {
-			const wins = mount(<WarriorDetail warrior={mockWarrior} />).find('.warrior-detail__wins');
+		it('should render a single .dm-warrior-detail__wins element', () => {
+			const wins = mount(<WarriorDetail warrior={mockWarrior} />).find('.dm-warrior-detail__wins');
 			expect(wins).to.have.length(1);
 			expect(wins).to.have.text(mockWarrior.wins);
 		});

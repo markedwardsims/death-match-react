@@ -15,14 +15,14 @@ export const Matchup = (props) => {
 
     return (props.opponent1 && props.opponent2) ?
         <div className="matchup">
-            <h2 className="title title--large title--yellow matchup__title matchup__title--first">Matchup!</h2>
-            <h3 className="title title--medium title--yellow matchup__title">Who wins??</h3>
+            <h2 className="dm-title dm-title--large dm-title--yellow matchup__title matchup__title--first">Matchup!</h2>
+            <h3 className="dm-title dm-title--medium dm-title--yellow matchup__title">Who wins??</h3>
             <WarriorDetail
                 warriorDetailCssClass="matchup__warrior-detail"
                 warrior={ props.opponent1 }
                 onClickHandler={eventSelection.bind(this, props.opponent1)}
             />
-            <h3 className="title title--large title--yellow title--italic matchup__title matchup__title--third">vs</h3>
+            <h3 className="dm-title dm-title--large dm-title--yellow dm-title--italic matchup__title matchup__title--third">vs</h3>
             <WarriorDetail
                 warriorDetailCssClass="matchup__warrior-detail"
                 warrior={ props.opponent2 }

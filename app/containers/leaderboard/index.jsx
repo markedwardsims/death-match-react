@@ -14,9 +14,9 @@ export const Leaderboard = (props) => {
 
         sortedWarriors.forEach(function (warrior, index) {
             items.push(
-                <tr className="table__row" key={index}>
-                    <td className="table__cell">{warrior.name}</td>
-                    <td className="table__cell text-right">{warrior.wins}</td>
+                <tr className="dm-table__row" key={index}>
+                    <td className="dm-table__cell">{warrior.name}</td>
+                    <td className="dm-table__cell dm-text-right">{warrior.wins}</td>
                 </tr>
             );
         });
@@ -24,13 +24,13 @@ export const Leaderboard = (props) => {
     };
 
     return (
-        <section className="leaderboard sidebar__section sidebar__section--full-width">
-            <h3 className="title title--medium">Leaderboard</h3>
-            <table className="table leaderboard__table">
-                <thead className="table__thead">
-                <tr className="table__row">
-                    <th className="table__cell">Warrior</th>
-                    <th className="table__cell text-right">Wins</th>
+        <section className="dm-leaderboard dm-sidebar__section dm-sidebar__section--full-width">
+            <h3 className="dm-title dm-title--medium">Leaderboard</h3>
+            <table className="dm-table dm-leaderboard__table">
+                <thead className="dm-table__thead">
+                <tr className="dm-table__row">
+                    <th className="dm-table__cell">Warrior</th>
+                    <th className="dm-table__cell dm-text-right">Wins</th>
                 </tr>
                 </thead>
                 <tbody>

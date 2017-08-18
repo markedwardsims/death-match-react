@@ -23,7 +23,7 @@ export const NotificationList = (props) => {
     };
 
     return (
-        <div className="notification-list">
+        <div className="dm-notification-list">
             {getNotificationListItems()}
         </div>
     );
