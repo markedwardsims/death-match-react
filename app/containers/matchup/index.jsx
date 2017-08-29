@@ -6,31 +6,33 @@ import {chooseOpponents, notify, notifyClear} from 'Actions';
 
 import './matchup.scss';
 
-export const Matchup = (props) => {
+export class Matchup extends React.PureComponent {
 
-    const eventSelection = (selectedWarrior) => {
-        props.socket.emit('warriorSelection', selectedWarrior.id);
-        props.chooseOpponents();
-    };
+    eventSelection(selectedWarrior) {
+        this.props.socket.emit('warriorSelection', selectedWarrior.id);
+        this.props.chooseOpponents();
+    }
 
-    return (props.opponent1 && props.opponent2) ?
-        <div className="matchup">
-            <h2 className="dm-title dm-title--large dm-title--yellow matchup__title matchup__title--first">Matchup!</h2>
-            <h3 className="dm-title dm-title--medium dm-title--yellow matchup__title">Who wins??</h3>
-            <WarriorDetail
-                warriorDetailCssClass="matchup__warrior-detail"
-                warrior={ props.opponent1 }
-                onClickHandler={eventSelection.bind(this, props.opponent1)}
-            />
-            <h3 className="dm-title dm-title--large dm-title--yellow dm-title--italic matchup__title matchup__title--third">vs</h3>
-            <WarriorDetail
-                warriorDetailCssClass="matchup__warrior-detail"
-                warrior={ props.opponent2 }
-                onClickHandler={eventSelection.bind(this, props.opponent2)}
-            />
-        </div> : null;
+    render() {
+        return (this.props.opponent1 && this.props.opponent2) ?
+            <div className="matchup">
+                <h2 className="dm-title dm-title--large dm-title--yellow matchup__title matchup__title--first">Matchup!</h2>
+                <h3 className="dm-title dm-title--medium dm-title--yellow matchup__title">Who wins??</h3>
+                <WarriorDetail
+                    warriorDetailCssClass="matchup__warrior-detail"
+                    warrior={ this.props.opponent1 }
+                    onClickHandler={this.eventSelection.bind(this, this.props.opponent1)}
+                />
+                <h3 className="dm-title dm-title--large dm-title--yellow dm-title--italic matchup__title matchup__title--third">vs</h3>
+                <WarriorDetail
+                    warriorDetailCssClass="matchup__warrior-detail"
+                    warrior={ this.props.opponent2 }
+                    onClickHandler={this.eventSelection.bind(this, this.props.opponent2)}
+                />
+            </div> : null;
+    }
 
-};
+}
 
 /* istanbul ignore next */
 const mapStateToProps = (store) => {
