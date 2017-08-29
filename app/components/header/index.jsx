@@ -1,5 +1,6 @@
 import React from 'react';
 import 'dmc/components/header/header.css';
+import 'dmc/components/logo/logo.css';
 
 export const Header = (props) => {
 
@@ -7,7 +8,7 @@ export const Header = (props) => {
         <header className="dm-header">
             <h1 className="dm-header__title">
                 Death
-                <span className="dm-header__logo"></span>
+                <span className="dm-logo"></span>
                 Match
             </h1>
         </header>

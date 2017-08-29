@@ -1,9 +1,9 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {orderBy} from 'lodash';
-import 'dmc/components/leaderboard/leaderboard.css';
 import 'dmc/components/table/table.css';
 import PropTypes from 'prop-types';
+import './leaderboard.scss';
 
 export const Leaderboard = (props) => {
 
@@ -26,7 +26,7 @@ export const Leaderboard = (props) => {
     return (
         <section className="dm-leaderboard dm-sidebar__section dm-sidebar__section--full-width">
             <h3 className="dm-title dm-title--medium">Leaderboard</h3>
-            <table className="dm-table dm-leaderboard__table">
+            <table className="dm-table dm-table--dark leaderboard__table">
                 <thead className="dm-table__thead">
                 <tr className="dm-table__row">
                     <th className="dm-table__cell">Warrior</th>

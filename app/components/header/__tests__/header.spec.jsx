@@ -18,7 +18,7 @@ describe('Header component', () => {
 
 	it('should render a single .header__logo element', () => {
 		const header = mount(<Header />);
-		expect(header.find('.dm-header__logo').length).to.eq(1);
+		expect(header.find('.dm-logo').length).to.eq(1);
 	});
 
 });

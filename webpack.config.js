@@ -20,8 +20,30 @@ module.exports = {
     },
     module: {
         rules: [
-            jsLoader,
-            jsxLoader,
+            {
+                test: /\.jsx$/,
+                include: [
+                    path.resolve(__dirname, "../", "app")
+                ],
+                loader: 'babel-loader',
+                options: {
+                    query: {
+                        presets: ['es2015']
+                    }
+                }
+            },
+            {
+                test: /\.jsx$/,
+                include: [
+                    path.resolve(__dirname, "../", "app")
+                ],
+                loader: 'babel-loader',
+                options: {
+                    query: {
+                        presets: ['react', 'es2015']
+                    }
+                },
+            },
             cssLoader,
             scssLoader,
             svgLoader
