@@ -2,7 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 import Warrior from 'Components/warrior';
 import {IMAGE_PATH} from 'Constants/appConstants';
-import 'dmc/components/warriorsList/warriorsList.css';
+import 'dmc/components/inlineList/inlineList.css';
 import PropTypes from 'prop-types';
 
 export const WarriorsList = (props) => {
@@ -11,7 +11,7 @@ export const WarriorsList = (props) => {
         let items = [];
         props.warriors.forEach((warrior, index) => {
             items.push(
-                <li className="dm-warriors__list-item" key={index}>
+                <li className="dm-inline-list__item" key={index}>
                     <Warrior image={warrior.image} size="small"/>
                 </li>
             );
@@ -22,7 +22,7 @@ export const WarriorsList = (props) => {
     return (
         <section className="dm-warriors dm-sidebar__section">
             <h3 className="dm-title dm-title--medium">Warriors</h3>
-            <ul className="dm-warriors__list dm-clearfix">
+            <ul className="dm-warriors__list dm-inline-list">
                 {getWarriorsListItems()}
             </ul>
         </section>

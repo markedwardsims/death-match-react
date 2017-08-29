@@ -4,7 +4,6 @@ module.exports = {
     test: /\.js$/,
     include: [
         path.resolve(__dirname, "../", "app"),
-        path.resolve(__dirname, "../", "node_modules/deathmatch-components")
     ],
     loader: 'babel-loader',
     query: {
